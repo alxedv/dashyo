@@ -41,7 +41,7 @@ export const requestPasswordReset = async (email: string) => {
 
     await account.createRecovery(
       email,
-      `${process.env.NEXT_PUBLIC_APP_URL}/reset-password`
+      `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/reset-password`
     );
 
     return { success: true };
