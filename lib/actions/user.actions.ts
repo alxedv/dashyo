@@ -13,6 +13,8 @@ const {
 
 
 export async function checkUserExists(email: string) {
+  console.log("Appwrite Endpoint:", process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT);
+
   const usersClient = await createUsersClient();
 
   try {
@@ -47,7 +49,7 @@ export const requestPasswordReset = async (email: string) => {
     return { success: true };
   } catch (error: any) {
     console.error(error);
-    throw new Error("Erro ao solicitar recuperação de senha. Tente novamente mais tarde.");
+    return { message: "Erro ao solicitar recuperação de senha. Tente novamente mais tarde.", error: error.message };
   }
 };
 
