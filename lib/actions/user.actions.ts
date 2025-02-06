@@ -46,7 +46,8 @@ export const requestPasswordReset = async (email: string) => {
 
     return { success: true };
   } catch (error: any) {
-    throw new Error(error.message || "Erro ao solicitar recuperação de senha.");
+    console.error(error);
+    throw new Error("Erro ao solicitar recuperação de senha. Tente novamente mais tarde.");
   }
 };
 
