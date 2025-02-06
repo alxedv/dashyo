@@ -18,7 +18,8 @@ const ForgotPasswordForm = () => {
       await requestPasswordReset(email);
       toast.success("Email de recuperação enviado!");
     } catch (error: any) {
-      toast.error(error.message || "Erro ao solicitar recuperação de senha.");
+      console.error(error);
+      toast.error("Erro ao solicitar recuperação de senha.");
     } finally {
       setIsLoading(false);
     }
