@@ -50,7 +50,7 @@ export function GoalEditInput({ className, userId }) {
                   currency: 'BRL',
                   minimumFractionDigits: 0,
                   maximumFractionDigits: 0,
-                }).format(Number(localGoal.goal))}
+                }).format(Number(localGoal?.goal))}
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   setLocalGoal({ ...localGoal, goal: value });
@@ -71,7 +71,7 @@ export function GoalEditInput({ className, userId }) {
                   currency: 'BRL',
                   minimumFractionDigits: 0,
                   maximumFractionDigits: 0,
-                }).format(Number(localGoal.current) || 0)}
+                }).format(Number(localGoal?.current) || 0)}
                 onChange={(e) => {
                   const value = e.target.value.replace(/\D/g, '');
                   setLocalGoal({ ...localGoal, current: value });
@@ -82,11 +82,11 @@ export function GoalEditInput({ className, userId }) {
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="ano">Ano</Label>
               <Select
-                defaultValue={localGoal.year}
+                defaultValue={localGoal?.year}
                 onValueChange={(value) => setLocalGoal({ ...localGoal, year: value })}
               >
                 <SelectTrigger className="col-span-2 h-8">
-                  <SelectValue placeholder={localGoal.year} />
+                  <SelectValue placeholder={localGoal?.year} />
                 </SelectTrigger>
                 <SelectContent className="bg-white">
                   {years.map((year) => (
