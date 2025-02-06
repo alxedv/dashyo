@@ -36,6 +36,7 @@ const AuthForm = ({ type, param }: any) => {
 
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    window.alert("TAAAAAAAAAAAAAAA")
     setIsLoading(true);
     try {
       if (type === 'sign-in') {
@@ -43,6 +44,30 @@ const AuthForm = ({ type, param }: any) => {
           email: data.email,
           password: data.password,
         });
+
+        if (type === 'sign-up') {
+          const newUser = await signUp({
+            email: data.email,
+            password: data.password,
+            name: data.name,
+            companyName: data.companyName,
+            role: isAdm ? "admin" : "default"
+          });
+          setUser(newUser);
+
+          toast.success('Cadastro realizado com sucesso!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+
+          router.push("requested-access");
+        }
 
         if (response.emailVerification) {
           toast.success('Login realizado com sucesso!', {
