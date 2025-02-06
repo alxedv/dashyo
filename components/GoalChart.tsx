@@ -62,9 +62,9 @@ export function GoalChart({
 
 
   useEffect(() => {
-    const goalValue = typeof goal.goal === 'number' ? goal.goal : Number(goal.goal) || 0;
+    const goalValue = typeof goal?.goal === 'number' ? goal?.goal : Number(goal?.goal) || 0;
 
-    const parsedCurrentValue = Number(goal.current);
+    const parsedCurrentValue = Number(goal?.current);
 
     const convRate = goalValue ? (parsedCurrentValue / goalValue) * 100 : 0;
     setConversionRate(convRate);
@@ -81,7 +81,7 @@ export function GoalChart({
   return (
     <Card className={className}>
       <CardHeader className="items-start text-center pb-0">
-        <CardTitle className="flex items-center justify-center w-full">{`${chartTitle} ${goal.year}`}</CardTitle>
+        <CardTitle className="flex items-center justify-center w-full">{`${chartTitle} ${goal?.year}`}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col">
         <ChartContainer config={chartConfig} className="aspect-square w-full h-[200px]">
@@ -141,14 +141,14 @@ export function GoalChart({
           <div className=" w-50 flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <RiFocus2Line />
-              <span>Meta: <b>{Number(goal.goal).toLocaleString('pt-BR', {
+              <span>Meta: <b>{Number(goal?.goal).toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
               })}</b></span>
             </div>
             <div className="flex items-center gap-2">
               <RiMapPin2Line scale={1} className="m-0" />
-              <span>Atual: <b>{Number(goal.current).toLocaleString('pt-BR', {
+              <span>Atual: <b>{Number(goal?.current).toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
               })}</b></span>
