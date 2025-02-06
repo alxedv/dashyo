@@ -43,7 +43,7 @@ export function GoalEditInput({ className, userId }) {
               <Input
                 id="meta"
                 type="text"
-                placeholder={goal.goal}
+                placeholder={goal?.goal}
                 className="col-span-2 h-8"
                 value={new Intl.NumberFormat('pt-BR', {
                   style: 'currency',
@@ -63,8 +63,8 @@ export function GoalEditInput({ className, userId }) {
               <Input
                 id="current"
                 type="text"
-                placeholder={goal.current}
-                defaultValue={goal.current}
+                placeholder={goal?.current}
+                defaultValue={goal?.current}
                 className="col-span-2 h-8"
                 value={new Intl.NumberFormat('pt-BR', {
                   style: 'currency',
