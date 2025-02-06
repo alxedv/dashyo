@@ -1,5 +1,6 @@
 import ResetPasswordForm from "@/components/ResetPasswordForm";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default function ResetPasswordPage() {
   return (
@@ -12,7 +13,10 @@ export default function ResetPasswordPage() {
           height={40}
         />
         <h2 className="text-2xl font-bold mb-4">Redefinir Senha</h2>
-        <ResetPasswordForm />
+        <Suspense>
+          <ResetPasswordForm />
+        </Suspense>
+
 
       </div>
 
