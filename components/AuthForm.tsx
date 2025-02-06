@@ -44,9 +44,24 @@ const AuthForm = ({ type, param }: any) => {
           password: data.password,
         });
 
+        // Se a resposta for uma string (mensagem de erro), exiba o toast e retorne
+        if (typeof response === "string") {
+          toast.error(response, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return;
+        }
 
+        // Se o login foi bem-sucedido
         if (response.emailVerification) {
-          toast.success('Login realizado com sucesso!', {
+          toast.success("Login realizado com sucesso!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -57,26 +72,22 @@ const AuthForm = ({ type, param }: any) => {
             theme: "light",
           });
 
-          router.push('/map');
+          router.push("/map");
         }
-        console.log({
-          type,
-          data
-        });
-
       }
-      if (type === 'sign-up') {
 
+      if (type === "sign-up") {
         const newUser = await signUp({
           email: data.email,
           password: data.password,
           name: data.name,
           companyName: data.companyName,
-          role: isAdm ? "admin" : "default"
+          role: isAdm ? "admin" : "default",
         });
+
         setUser(newUser);
 
-        toast.success('Cadastro realizado com sucesso!', {
+        toast.success("Cadastro realizado com sucesso!", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -89,21 +100,11 @@ const AuthForm = ({ type, param }: any) => {
 
         router.push("requested-access");
       }
-    } catch (error: any) {
-      toast.error(error.message || "Erro ao fazer login.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
     } finally {
       setIsLoading(false);
     }
   };
+
 
 
 

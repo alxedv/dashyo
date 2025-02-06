@@ -125,13 +125,14 @@ export const signIn = async ({ email, password }: signInProps) => {
     console.error("Erro ao fazer login:", error);
 
     if (error.code === 401) {
-      throw new Error("Email ou senha incorretos.");
+      console.log({ error });
+      return "Email ou senha incorretos.";
     } else if (error.code === 403) {
-      throw new Error("Acesso negado. Verifique se sua conta foi ativada.");
+      return "Acesso negado. Verifique se sua conta foi ativada.";
     } else if (error.code === 429) {
-      throw new Error("Muitas tentativas. Aguarde um momento antes de tentar novamente.");
+      return "Muitas tentativas. Aguarde um momento antes de tentar novamente.";
     } else {
-      throw new Error("Erro inesperado. Tente novamente mais tarde.");
+      return "Erro inesperado. Tente novamente mais tarde.";
     }
   }
 };
