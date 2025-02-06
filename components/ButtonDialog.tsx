@@ -27,7 +27,7 @@ const ButtonDialog = ({ user, updateMethod }) => {
           <span>{user.emailVerification ? 'Remover acesso' : 'Permitir acesso'}</span>
         </div>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className='bg-white'>
         <AlertDialogHeader>
           <AlertDialogTitle>
             {
