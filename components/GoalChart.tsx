@@ -52,7 +52,7 @@ export function GoalChart({
   const [conversionRate, setConversionRate] = useState(0);
 
   useEffect(() => {
-    const parsedGoal = JSON.parse(supervisor.goal);
+    const parsedGoal = JSON.parse(supervisor?.goal);
     console.log({
       parsedGoal
     });

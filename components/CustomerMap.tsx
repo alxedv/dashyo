@@ -8,7 +8,7 @@ import { getLocation } from '@/lib/actions/customer.action';
 import CustomModal from './CustomModal';
 import UpdateCustomerModal from './UpdateCustomerModal';
 import GeolocationSelect from './GeolocationSelect';
-import RepresentativeIcon from '../public/icons/plasson-icon.jpg';
+import RepresentativeIcon from '../public/icons/Dashyo-icon.jpg';
 import Image from 'next/image';
 import SelectSupervisor from './SelecSupervisor';
 import { CustomerTooltip } from './CustomerTooltip';
@@ -115,7 +115,7 @@ const CustomerMap = ({ customers, representatives, supervisors }) => {
             <div className="flex-col flex items-center">
               <span
                 ref={el => { spanRefs.current[index] = el; }} // Não retorna nada
-                className="bg-white px-2 rounded-lg text-red-600 mb-2"
+                className="bg-white px-2 rounded-lg text-blue-950 mb-2"
               >
                 {rep.name}
               </span>
@@ -124,7 +124,7 @@ const CustomerMap = ({ customers, representatives, supervisors }) => {
                 src={RepresentativeIcon}
                 width={50}
                 height={50}
-                className="rounded border-2 border-red-600"
+                className="rounded border-2"
               />
             </div>
           </Overlay>

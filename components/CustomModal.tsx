@@ -297,7 +297,7 @@ const CustomModal = ({ open, setOpen }) => {
               <div>
                 <div className='mb-4'>
                   <Label className='label-form' htmlFor='rep-name'>Nome do representante</Label>
-                  <Input onChange={({ target }) => handleRepInputChange(target.value, 'name')} id='rep-name' placeholder="Representante Plasson" />
+                  <Input onChange={({ target }) => handleRepInputChange(target.value, 'name')} id='rep-name' placeholder="Representante" />
                 </div>
                 <div className='w-[250px]'>
                   <Label htmlFor='rep-phone'>Telefone para contato</Label>

@@ -13,6 +13,7 @@ import CustomSelect from './CustomSelect'
 import { Separator } from "@/components/ui/separator"
 import CustomInput from './CustomInput'
 import CustomCurrencyInput from './CustomCurrencyInput'
+import EquipmentSelect from './EquipmentSelect'
 
 const EquipmentForm = ({
   handleChange,
@@ -41,7 +42,17 @@ const EquipmentForm = ({
         <Form {...form}>
           <form className="space-y-8 w-full">
             <div className='flex items-center gap-4 w-full flex-wrap'>
-              <CustomSelect
+              <EquipmentSelect
+                inputValue={equipments[index].equipment}
+                index={index}
+                handleChange={handleChange}
+                className="w-[30%]"
+                name="equipment"
+                form={form}
+                label="Equipamento"
+                placeholder="Selecione"
+              />
+              {/* <CustomSelect
                 inputValue={equipments[index].equipment}
                 index={index}
                 handleChange={handleChange}
@@ -51,7 +62,7 @@ const EquipmentForm = ({
                 label="Equipamento"
                 placeholder="Selecione"
                 items={['Gaiola', 'Máquinas', 'Upgrade Máquina', 'Esteiras Transportadoras', 'Ninho', 'Climatização']}
-              />
+              /> */}
               <CustomCurrencyInput
                 form={form}
                 inputValue={equipments[index].value}

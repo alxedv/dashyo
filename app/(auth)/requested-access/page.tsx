@@ -9,8 +9,8 @@ const RequestedAccess = () => {
       <header className="flex flex-col items-center gap-5 md:gap-8">
         <Link href="/" className="flex mb-12 cursor-pointer items-center gap-2">
           <Image
-            src="/plasson-logo.png"
-            alt="Plasson logo"
+            src="/dashyo.logo.png"
+            alt="Dashyo logo"
             width={250}
             height={80}
           />

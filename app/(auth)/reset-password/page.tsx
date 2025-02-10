@@ -7,8 +7,8 @@ export default function ResetPasswordPage() {
     <section className="flex flex-col items-center justify-center min-h-screen">
       <div className="flex flex-col items-center justify-center border-2 border-black-1 rounded-lg p-8">
         <Image
-          src="/plasson-logo.png"
-          alt="Plasson logo"
+          src="/dashyo.logo.png"
+          alt="Dashyo logo"
           width={125}
           height={40}
         />

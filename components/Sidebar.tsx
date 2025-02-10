@@ -28,8 +28,8 @@ const Sidebar = ({ user }: SiderbarProps) => {
         <Link href="/" className={cn('cursor-pointer items-center gap-2', { 'mb-0': isDashboard, 'mb-10': !isDashboard })}>
           <div className='flex gap-2 items-center justify-evenly'>
             <Image
-              src="/plasson-logo.png"
-              alt="Plasson logo"
+              src="/dashyo-logo.png"
+              alt="Dashyo logo"
               width={70}
               height={20}
             />
