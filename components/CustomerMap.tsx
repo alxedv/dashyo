@@ -14,10 +14,10 @@ import SelectSupervisor from './SelecSupervisor';
 import { CustomerTooltip } from './CustomerTooltip';
 
 const CustomerMap = ({ customers, representatives, supervisors }) => {
-  const [center, setCenter] = useState([-21.723709994933873, -50.72346522754347]);
+  const [center, setCenter] = useState([-14.2400732, -53.1805017]);
   const [currentCustomers, setCurrentCustomers] = useAtom(customersAtom);
   const [currentReps, setCurrentReps] = useAtom(representativesAtom);
-  const [zoom, setZoom] = useState(14);
+  const [zoom, setZoom] = useState(4);
   const [openModal, setOpenModal] = useState(false);
   const [updateCustomerData, setUpdateCustomerData] = useAtom(updateCustomerAtom);
   const setLocationSelected = useSetAtom(locationSelectedAtom);
